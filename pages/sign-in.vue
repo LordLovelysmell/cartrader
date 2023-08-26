@@ -55,8 +55,9 @@ const signIn = async () => {
 
   if (error) {
     console.error(error);
+    return;
   }
 
-  navigateTo("/profile");
+  navigateTo("/profile/listings");
 };
 </script>
