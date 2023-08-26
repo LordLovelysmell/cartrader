@@ -56,6 +56,14 @@ const onChangeLocation = () => {
   if (!city.value) {
     return;
   }
+
+  if (!isNaN(Number(city.value))) {
+    throw createError({
+      statusCode: 400,
+      message: "This city doesn't exist",
+    });
+  }
+
   updateModal("location");
   navigateTo(`/city/${city.value}/car/${route.params.make}`);
 };
