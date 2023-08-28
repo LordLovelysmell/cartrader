@@ -120,8 +120,8 @@ const onChangeMake = (make) => {
 };
 
 const priceRange = reactive({
-  min: 0,
-  max: 0,
+  min: null,
+  max: null,
 });
 
 const priceRangeText = computed(() => {
@@ -133,7 +133,7 @@ const priceRangeText = computed(() => {
   }
 
   if (!minPrice && maxPrice) {
-    return `< $${minPrice}`;
+    return `< $${maxPrice}`;
   } else if (minPrice && !maxPrice) {
     return `> $${minPrice}`;
   } else {
